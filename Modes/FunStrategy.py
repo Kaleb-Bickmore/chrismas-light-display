@@ -1,12 +1,16 @@
 import random
+from LightModes.PingPongStrategy import PingPongStrategy
+from LightModes.RainbowLazerStrategy import RainbowLazerStrategy
 from LightModes.RainbowWaveStrategy import RainbowWaveStrategy
 class FunStrategy:
     _light_mode_strategies = {}
     _list_of_strategies = []
     def __init__(self, bps):
         self._bps = bps
-        self._list_of_strategies = ["rainbow-wave"]
+        self._list_of_strategies = ["rainbow-wave", "ping-pong", "rainbow-lazer"]
         self._light_mode_strategies["rainbow-wave"] = RainbowWaveStrategy()
+        self._light_mode_strategies["ping-pong"] = PingPongStrategy()
+        self._light_mode_strategies["rainbow-lazer"] = RainbowLazerStrategy()
 
     def run(self):
         while(True):
