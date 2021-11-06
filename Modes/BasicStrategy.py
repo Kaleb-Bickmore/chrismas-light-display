@@ -28,6 +28,7 @@ class BasicStrategy:
             if(len(tmpList) == 0):
                 tmpList = self._list_of_strategies.copy()
             random_light_mode = tmpList.pop(random.randint(0, len(tmpList)-1))
+            print(random_light_mode)
             random_cycle_time = random.randint(45, 60)
             self._light_mode_strategies[random_light_mode].run(random_cycle_time, self._bps)
             time.sleep(self._bps/600)
