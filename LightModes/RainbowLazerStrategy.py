@@ -1,5 +1,6 @@
 import time
 import random
+from datetime import datetime, timedelta
 from Pixels import Pixels
 
 class RainbowLazerStrategy:
@@ -22,8 +23,8 @@ class RainbowLazerStrategy:
         t_end = time.time() + cycle_time
         length = random.randint(5,20)
         pos = range(0, length)
-        while t_end <= time.time():
-            if(pos[0]>=self._pixels._num_pixels):
+        while t_end >= time.time():
+            if(pos[0] == self._pixels._num_pixels-1):
                 pos = range(0, length)
             self._pixels._pixels.fill((0, 0, 0))
             self._pixels._pixels.show()
@@ -34,7 +35,7 @@ class RainbowLazerStrategy:
             self._pixels._pixels.show()
             time.sleep(bps/6000)
         #finish out ping pong
-        while(pos[0]!=self._pixels._num_pixels):
+        while(pos[0]!=self._pixels._num_pixels-1):
             self._pixels._pixels.fill((0, 0, 0))
             self._pixels._pixels.show()
             pos = list(map(lambda a : a+1, pos))
