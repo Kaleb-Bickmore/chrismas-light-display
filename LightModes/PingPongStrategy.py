@@ -1,5 +1,6 @@
-import time
+from datetime import datetime, timedelta
 import random
+import time
 from Pixels import Pixels
 
 class PingPongStrategy:
@@ -25,10 +26,10 @@ class PingPongStrategy:
         step = random.randint(1,3)
         pos = range(0, length, step)
         decrementing = False
-        while t_end <= time.time():
+        while t_end >= time.time():
             self._pixels._pixels.fill((0, 0, 0))
             self._pixels._pixels.show()
-            if(pos[len(pos)-1]>= self._pixels._num_pixels):
+            if(pos[len(pos)-1] == self._pixels._num_pixels-1):
                 decrementing = True
             if(pos[0] == 0):
                 decrementing = False
@@ -41,7 +42,7 @@ class PingPongStrategy:
             self._pixels._pixels.show()
             time.sleep(bps/6000)
         #finish out ping pong
-        while(pos[0]!=0 or pos[len(pos)-1]!=self._pixels._num_pixels):
+        while(pos[0]!=0 and pos[len(pos)-1] != self._pixels._num_pixels-1):
             self._pixels._pixels.fill((0, 0, 0))
             self._pixels._pixels.show()
             if(decrementing):

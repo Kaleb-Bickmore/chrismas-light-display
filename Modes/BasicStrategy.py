@@ -17,9 +17,13 @@ class BasicStrategy:
 
 
     def run(self):
+        tmpList = self._list_of_strategies.copy()
+        random.seed(time.clock())
         while(True):
-            random_light_mode = self._list_of_strategies[random.randint(0, len(self._list_of_strategies)-1)]
-            random_cycle_time = random.randint(10, 20)
+            if(len(tmpList) == 0):
+                tmpList = self._list_of_strategies.copy()
+            random_light_mode = tmpList.pop(random.randint(0, len(tmpList)-1))
+            random_cycle_time = random.randint(1, 2)
             self._light_mode_strategies[random_light_mode].run(random_cycle_time, self._bps)
             time.sleep(self._bps/600)
 

@@ -1,5 +1,7 @@
 import time
 from Pixels import Pixels
+from datetime import datetime, timedelta
+
 
 class RainbowWaveStrategy:
     def __init__(self):
@@ -40,7 +42,7 @@ class RainbowWaveStrategy:
     def run(self, cycle_time, bps):
         t_end = time.time() + cycle_time
         # do whatever you do
-        while t_end <= time.time():
+        while t_end >= time.time():
             self._pixels._pixels.fill((255, 0, 0))
             self._pixels._pixels.show()
             time.sleep(1)
