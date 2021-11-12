@@ -18,7 +18,6 @@ class SolidColorStrategy:
                 else:
                     self._pixels._pixels[i] = self._color
             self._pixels._pixels.show()
-            time.sleep(bps/60)
 
                       
 

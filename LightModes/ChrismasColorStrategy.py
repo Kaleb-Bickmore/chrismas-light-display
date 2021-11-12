@@ -28,7 +28,6 @@ class ChrismasColorStrategy:
                     else:
                         self._pixels._pixels[i] = (255, 255, 255) 
             self._pixels._pixels.show()
-            time.sleep(bps/60)
 
                       
 
