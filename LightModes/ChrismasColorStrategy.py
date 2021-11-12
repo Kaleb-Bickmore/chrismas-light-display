@@ -26,8 +26,9 @@ class ChrismasColorStrategy:
                     if(random.randint(0,10) == 0):
                         self._pixels._pixels[i] = (int(255/2),int(255/2), int(255/2))
                     else:
-                        self._pixels._pixels[i] = (255, 255, 255) 
+                        self._pixels._pixels[i] = (255, 255, 255)
             self._pixels._pixels.show()
+            time.sleep(bps/60) 
 
                       
 
