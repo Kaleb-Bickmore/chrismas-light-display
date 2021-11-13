@@ -31,10 +31,10 @@ class ReactiveStrategy:
             middle_position = int(self._pixels._num_pixels/2)-1
             step = 5
             for i in range(0, length, step):
-                self._pixels._pixels[middle_position-i-step: middle_position-i] = [(random.randint(0,255),random.randint(0,255),random.randint(0,255)) for aa in self._pixels._pixels[middle_position-i-step: middle_position-i]]
-                self._pixels._pixels[middle_position+i : middle_position+i+step] = [(random.randint(0,255),random.randint(0,255),random.randint(0,255)) for aa in self._pixels._pixels[middle_position+i : middle_position+i+step]]
+                self._pixels._pixels[middle_position-i-step: middle_position-i] = [self.wheel(middle_position-i-step) for aa in self._pixels._pixels[middle_position-i-step: middle_position-i]]
+                self._pixels._pixels[middle_position+i : middle_position+i+step] = [self.wheel(middle_position+i) for aa in self._pixels._pixels[middle_position+i : middle_position+i+step]]
                 self._pixels._pixels.show()
-            for i in range(length,step+1,-1*step):
+            for i in range(length,0,-1*step):
                 self._pixels._pixels[middle_position-i : middle_position-i +step ] = [(0,0,0) for aa in self._pixels._pixels[middle_position-i : middle_position-i +step]]
                 self._pixels._pixels[middle_position+i -step: middle_position+i ] = [(0,0,0) for aa in self._pixels._pixels[middle_position+i -step: middle_position+i]]
                 self._pixels._pixels.show()
