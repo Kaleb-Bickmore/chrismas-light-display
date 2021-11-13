@@ -29,8 +29,8 @@ class SplitWaveStrategy:
         while(t_end>=time.time()):
             step = 5
             split = 50
-            ratio = self._pixels._num_pixels/split
-            
+            ratio = int(self._pixels._num_pixels/split)
+
             for i in range(0, split, step):
                 for j in range(ratio):
                     self._pixels._pixels[i+split*j:i+step+split*j] = [self.wheel(aa) for aa in self._pixels._pixels[i+split*j:i+step+split*j]]
