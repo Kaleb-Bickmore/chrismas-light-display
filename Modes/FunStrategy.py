@@ -5,14 +5,16 @@ from LightModes.DigitalSnowStrategy import DigitalSnowStrategy
 from LightModes.RainbowLazerStrategy import RainbowLazerStrategy
 from LightModes.RainbowWaveStrategy import RainbowWaveStrategy
 from LightModes.ReactiveStrategy import ReactiveStrategy
+from LightModes.SplitWaveStrategy import SplitWaveStrategy
 
 class FunStrategy:
     _light_mode_strategies = {}
     _list_of_strategies = []
     def __init__(self, bps):
         self._bps = bps
-        self._list_of_strategies = ["digital-snow","reactive", "rainbow-wave", "rainbow-lazer", "chrismas-color"]
+        self._list_of_strategies = ["digital-snow","reactive", "split-wave","rainbow-wave", "rainbow-lazer", "chrismas-color"]
         self._light_mode_strategies["rainbow-wave"] = RainbowWaveStrategy()
+        self._light_mode_strategies["split-wave"] = SplitWaveStrategy()
         self._light_mode_strategies["rainbow-lazer"] = RainbowLazerStrategy()
         self._light_mode_strategies["chrismas-color"] = ChrismasColorStrategy()
         self._light_mode_strategies["reactive"] = ReactiveStrategy()
