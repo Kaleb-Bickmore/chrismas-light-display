@@ -2,8 +2,6 @@ import random
 import time
 from LightModes.ChrismasColorStrategy import ChrismasColorStrategy
 from LightModes.DigitalSnowStrategy import DigitalSnowStrategy
-from LightModes.PingPongStrategy import PingPongStrategy
-from LightModes.RainbowLazerStrategy import RainbowLazerStrategy
 from LightModes.RainbowWaveStrategy import RainbowWaveStrategy
 from LightModes.SolidColorStrategy import SolidColorStrategy
 

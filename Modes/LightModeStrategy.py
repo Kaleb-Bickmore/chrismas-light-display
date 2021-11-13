@@ -3,7 +3,6 @@ import random
 from Pixels import Pixels
 from LightModes.ChrismasColorStrategy import ChrismasColorStrategy
 from LightModes.DigitalSnowStrategy import DigitalSnowStrategy
-from LightModes.PingPongStrategy import PingPongStrategy
 from LightModes.RainbowLazerStrategy import RainbowLazerStrategy
 from LightModes.RainbowWaveStrategy import RainbowWaveStrategy
 from LightModes.ReactiveStrategy import ReactiveStrategy
@@ -13,9 +12,8 @@ from LightModes.SolidColorStrategy import SolidColorStrategy
 class LightModeStrategy:
     _light_mode_strategies = {}
     def __init__(self):
-        self._all_strategies = ["digital-snow","reactive", "rainbow-wave", "ping-pong", "rainbow-lazer", "chrismas-color", "solid-color"]
+        self._all_strategies = ["digital-snow","reactive", "rainbow-wave", "rainbow-lazer", "chrismas-color", "solid-color"]
         self._light_mode_strategies["rainbow-wave"] = RainbowWaveStrategy()
-        self._light_mode_strategies["ping-pong"] = PingPongStrategy()
         self._light_mode_strategies["rainbow-lazer"] = RainbowLazerStrategy()
         self._light_mode_strategies["chrismas-color"] = ChrismasColorStrategy()
         self._light_mode_strategies["reactive"] = ReactiveStrategy()
