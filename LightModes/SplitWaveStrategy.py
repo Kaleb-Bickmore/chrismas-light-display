@@ -42,11 +42,13 @@ class SplitWaveStrategy:
                 for j in range(ratio):
                     self._pixels._pixels[i+split*j:i+step+split*j] = [ self.wheel(i+split*j) for aa in self._pixels._pixels[i+split*j:i+step+split*j]]
                 self._pixels._pixels.show()
+                time.sleep(bps/6000)
 
             for i in range(split,0,-1*step):
                 for j in range(ratio):
                     self._pixels._pixels[i-step+split*j:i+split*j] = [(0,0,0) for aa in self._pixels._pixels[i-step+split*j:i+split*j]]
                 self._pixels._pixels.show()
+                time.sleep(bps/6000)
 
 
                       

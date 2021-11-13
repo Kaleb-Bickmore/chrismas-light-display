@@ -34,10 +34,13 @@ class ReactiveStrategy:
                 self._pixels._pixels[middle_position-i-step: middle_position-i] = [self.wheel(middle_position-i-step) for aa in self._pixels._pixels[middle_position-i-step: middle_position-i]]
                 self._pixels._pixels[middle_position+i : middle_position+i+step] = [self.wheel(middle_position+i) for aa in self._pixels._pixels[middle_position+i : middle_position+i+step]]
                 self._pixels._pixels.show()
+                time.sleep(bps/6000)
             for i in range(length,0,-1*step):
                 self._pixels._pixels[middle_position-i : middle_position-i +step ] = [(0,0,0) for aa in self._pixels._pixels[middle_position-i : middle_position-i +step]]
                 self._pixels._pixels[middle_position+i -step: middle_position+i ] = [(0,0,0) for aa in self._pixels._pixels[middle_position+i -step: middle_position+i]]
                 self._pixels._pixels.show()
+                time.sleep(bps/6000)
+
 
 
                       
