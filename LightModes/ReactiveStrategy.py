@@ -27,7 +27,7 @@ class ReactiveStrategy:
     def run(self, cycle_time, bps):
         t_end = time.time() + cycle_time
         while(t_end>=time.time()):
-            length = int(random.randint(int(self._pixels._num_pixels/4),self._pixels._num_pixels-10)/2)
+            length = int(random.randint(int(self._pixels._num_pixels/4),self._pixels._num_pixels-10)/2) -1
             middle_position = int(self._pixels._num_pixels/2)-1
             step = 5
             for i in range(0, length, step):

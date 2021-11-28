@@ -29,7 +29,21 @@ class SplitWaveStrategy:
         if(i>=300 and i <350):
             return (255,0,0)
 
-        if(i>=350):
+        if(i>=350 and i< 400):
+            return (0,255,0)
+
+        if(i>=400 and i< 450):
+            return (255,255,255)
+
+        if(i>=450 and i< 500):
+            return (255,0,0)
+        if(i>=500 and i< 550):
+            return (0,255,0)
+        if(i>=550 and i< 600):
+            return (255,255,255)
+        if(i>=600 and i< 650):
+            return (255,0,0)
+        if(i>=650):
             return (0,255,0)
     def run(self, cycle_time, bps):
         t_end = time.time() + cycle_time

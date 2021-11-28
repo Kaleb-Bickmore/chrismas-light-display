@@ -4,18 +4,16 @@ from LightModes.CandyCaneStrategy import CandyCaneStrategy
 from LightModes.ChrismasColorStrategy import ChrismasColorStrategy
 from LightModes.DigitalSnowStrategy import DigitalSnowStrategy
 from LightModes.RainbowWaveStrategy import RainbowWaveStrategy
-from LightModes.SolidColorStrategy import SolidColorStrategy
 
 class BasicStrategy:
     _light_mode_strategies = {}
     _list_of_strategies = []
     def __init__(self, bps):
         self._bps = bps
-        self._list_of_strategies = ["rainbow-wave", "chrismas-color", "solid-color","digital-snow", "candy-cane"]
+        self._list_of_strategies = ["rainbow-wave", "chrismas-color", "digital-snow", "candy-cane"]
         self._light_mode_strategies["rainbow-wave"] = RainbowWaveStrategy()
         self._light_mode_strategies["chrismas-color"] = ChrismasColorStrategy()
         self._light_mode_strategies["candy-cane"] = CandyCaneStrategy()
-        self._light_mode_strategies["solid-color"] = SolidColorStrategy()
         self._light_mode_strategies["digital-snow"] = DigitalSnowStrategy()
 
 

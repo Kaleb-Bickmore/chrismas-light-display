@@ -14,12 +14,11 @@ class FunStrategy:
     _list_of_strategies = []
     def __init__(self, bps):
         self._bps = bps
-        self._list_of_strategies = ["chasing-lights","candy-cane","digital-snow","reactive", "split-wave","rainbow-wave", "rainbow-lazer", "chrismas-color"]
+        self._list_of_strategies = ["candy-cane","digital-snow","reactive", "split-wave","rainbow-wave", "rainbow-lazer", "chrismas-color"]
         self._light_mode_strategies["rainbow-wave"] = RainbowWaveStrategy()
         self._light_mode_strategies["split-wave"] = SplitWaveStrategy()
         self._light_mode_strategies["rainbow-lazer"] = RainbowLazerStrategy()
         self._light_mode_strategies["chrismas-color"] = ChrismasColorStrategy()
-        self._light_mode_strategies["chasing-lights"] = ChasingLightsStrategy()
         self._light_mode_strategies["candy-cane"] = CandyCaneStrategy()
         self._light_mode_strategies["reactive"] = ReactiveStrategy()
         self._light_mode_strategies["digital-snow"] = DigitalSnowStrategy()
