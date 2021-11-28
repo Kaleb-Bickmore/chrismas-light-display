@@ -1,6 +1,6 @@
 import time
 import random
-from Pixels import Pixels
+from Lights.Pixels import Pixels
 
 class SplitWaveStrategy:
     def __init__(self):

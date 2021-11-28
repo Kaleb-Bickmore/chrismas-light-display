@@ -1,6 +1,6 @@
 import time
 import random
-from Pixels import Pixels
+from Lights.Pixels import Pixels
 
 class SolidColorStrategy:
     def __init__(self):

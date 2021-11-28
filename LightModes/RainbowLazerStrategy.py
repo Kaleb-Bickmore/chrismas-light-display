@@ -1,7 +1,7 @@
 import time
 import random
 from datetime import datetime, timedelta
-from Pixels import Pixels
+from Lights.Pixels import Pixels
 
 class RainbowLazerStrategy:
     def __init__(self):

@@ -1,7 +1,7 @@
 from math import pi
 import time
 import random
-from Pixels import Pixels
+from Lights.Pixels import Pixels
 
 class DigitalSnowStrategy:
     def __init__(self):

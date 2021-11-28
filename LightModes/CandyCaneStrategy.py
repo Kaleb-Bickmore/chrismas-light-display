@@ -1,5 +1,5 @@
 import time
-from Pixels import Pixels
+from Lights.Pixels import Pixels
 
 class CandyCaneStrategy:
     def __init__(self):
