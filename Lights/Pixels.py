@@ -26,6 +26,12 @@ class Pixels():
             "l-to-top-right-corner" : (632,659),
             "archway" : (660,686),
             "candy-cane" : (687,699)}
+    _left_sides = ["left-pillar","l-to-top-right-corner", "left-side-garage","left-main-garage","candy-cane"]
+    _right_sides = ["right-pillar","right-side-garage", "right-main-garage", "top-right-corner-to-bottom"]
+    _top_sides = ["bottom-corner-to-side-garage","archway", "top-main-garage","space-between-garages",
+        "right-pillar-to-door-corner","space-between-pillar","right-pillar-to-door-corner","door-corner-to-garage-corner",
+        "top-left-main-garage-top-right-main-garage","top-side-garage", "top-left-side-garage-top-right-side-garage"]
+
     def __init__(self):
         pass
         # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18 not working
@@ -39,12 +45,39 @@ class Pixels():
         for group in groups:
             (start_index,end_index) = self._groups[group]
             self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
-        self._pixels.show()
     
     def fill_group(self, group, color=(randint(0,255),randint(0,255),randint(0,255))):
         (start_index,end_index) = self._groups[group]
         self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
-        self._pixels.show()
 
+    def fill_left_side(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+        for group in self._left_sides:
+            (start_index,end_index) = self._groups[group]
+            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+
+    def fill_top_side(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+        for group in self._top_sides:
+            (start_index,end_index) = self._groups[group]
+            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+
+    def fill_right_side(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+        for group in self._right_sides:
+            (start_index,end_index) = self._groups[group]
+            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+    def fill_left_side_index(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+        for group in self._left_sides:
+            (start_index,end_index) = self._groups[group]
+            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+
+    def fill_top_side_index(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+        for group in self._top_sides:
+            (start_index,end_index) = self._groups[group]
+            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+
+    def fill_right_side_index(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+        for group in self._right_sides:
+            (start_index,end_index) = self._groups[group]
+            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+  
     def get_all_groups(self):
         return self._groups.keys()

@@ -2,7 +2,7 @@ from Modes.BasicStrategy import BasicStrategy
 from Modes.LightModeStrategy import LightModeStrategy
 from Modes.MusicStrategy import MusicStrategy
 from Modes.FunStrategy import FunStrategy
-from Pixels import Pixels
+from Lights.Pixels import Pixels
 
 class LightShow:
     _mode_strategies = {}
