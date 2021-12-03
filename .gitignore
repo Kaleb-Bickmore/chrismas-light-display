@@ -10,6 +10,7 @@ __pycache__/
 .Python
 build/
 music/.
+fm_transmitter/* 
 develop-eggs/
 dist/
 downloads/

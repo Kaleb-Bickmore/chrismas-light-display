@@ -7,10 +7,9 @@ from Lights.Pixels import Pixels
 class LightShow:
     _mode_strategies = {}
     def __init__(self):
-        self._bps = 60
-        self._mode_strategies["basic"] = BasicStrategy(self._bps)
-        self._mode_strategies["music"] = MusicStrategy(self._bps)
-        self._mode_strategies["fun"] = FunStrategy(self._bps)
+        self._mode_strategies["basic"] = BasicStrategy()
+        self._mode_strategies["music"] = MusicStrategy()
+        self._mode_strategies["fun"] = FunStrategy()
         self._light_mode_strategy = LightModeStrategy()
 
         self._pixels = Pixels()

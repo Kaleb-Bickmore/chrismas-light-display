@@ -8,8 +8,7 @@ from LightModes.RainbowWaveStrategy import RainbowWaveStrategy
 class BasicStrategy:
     _light_mode_strategies = {}
     _list_of_strategies = []
-    def __init__(self, bps):
-        self._bps = bps
+    def __init__(self):
         self._list_of_strategies = ["rainbow-wave", "chrismas-color", "digital-snow", "candy-cane"]
         self._light_mode_strategies["rainbow-wave"] = RainbowWaveStrategy()
         self._light_mode_strategies["chrismas-color"] = ChrismasColorStrategy()
@@ -31,8 +30,7 @@ class BasicStrategy:
             random_light_mode = tmpList.pop(random.randint(0, len(tmpList)-1))
             print(random_light_mode)
             random_cycle_time = random.randint(45, 60)
-            self._light_mode_strategies[random_light_mode].run(random_cycle_time, self._bps)
-            time.sleep(self._bps/600)
+            self._light_mode_strategies[random_light_mode].run(random_cycle_time, 60)
 
 
             

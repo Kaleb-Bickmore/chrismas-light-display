@@ -1,3 +1,4 @@
+import os
 from LightShow import LightShow
 import sys
 import argparse
@@ -8,7 +9,8 @@ def main(mode, lightmode):
         myLightShow.run(mode, lightmode)
     except KeyboardInterrupt:
         myLightShow.turn_off()        
-        sys.exit()
+        sys.exit()        
+
 
 if __name__== "__main__" :
     parser = argparse.ArgumentParser()
