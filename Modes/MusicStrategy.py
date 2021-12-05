@@ -30,7 +30,7 @@ class MusicStrategy:
     }
     def __init__(self):
 #        self._list_of_songs = ["last_christmas.wav", "all_i_want.wav","feliz_navidad.wav","winter_wonderland.wav","white_christmas.wav","jingle_bell.wav"]
-        self._list_of_songs = ["last_christmas.wav"]
+        self._list_of_songs = ["white_christmas.wav"]
 
         self._music_mode_strategies["last_christmas.wav"] = LastChristmasStrategy()
         self._music_mode_strategies["all_i_want.wav"] = AllIWantStrategy()

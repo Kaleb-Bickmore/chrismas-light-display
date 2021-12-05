@@ -31,6 +31,8 @@ class Pixels():
     _top_sides = ["bottom-corner-to-side-garage","archway", "top-main-garage","space-between-garages",
         "right-pillar-to-door-corner","space-between-pillar","right-pillar-to-door-corner","door-corner-to-garage-corner",
         "top-left-main-garage-top-right-main-garage","top-side-garage", "top-left-side-garage-top-right-side-garage"]
+    _main_garage = ["top-main-garage","left-main-garage","right-main-garage"]
+    _side_garage = ["top-side-garage","left-side-garage","right-side-garage"]
 
     def __init__(self):
         pass
@@ -64,20 +66,22 @@ class Pixels():
         for group in self._right_sides:
             (start_index,end_index) = self._groups[group]
             self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
-    def fill_left_side_index(self, color=(randint(0,255),randint(0,255),randint(0,255))):
-        for group in self._left_sides:
-            (start_index,end_index) = self._groups[group]
-            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
 
-    def fill_top_side_index(self, color=(randint(0,255),randint(0,255),randint(0,255))):
-        for group in self._top_sides:
-            (start_index,end_index) = self._groups[group]
-            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+    def fill_main_garage(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+            for group in self._main_garage:
+                (start_index,end_index) = self._groups[group]
+                self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
 
-    def fill_right_side_index(self, color=(randint(0,255),randint(0,255),randint(0,255))):
-        for group in self._right_sides:
-            (start_index,end_index) = self._groups[group]
-            self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
-  
+    def fill_side_garage(self, color=(randint(0,255),randint(0,255),randint(0,255))):
+            for group in self._side_garage:
+                (start_index,end_index) = self._groups[group]
+                self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+
+    def fill_except(self, groups, color=(randint(0,255),randint(0,255),randint(0,255))):
+            for group in self._groups:
+                if group not in groups:
+                    (start_index,end_index) = self._groups[group]
+                    self._pixels[start_index: end_index] = [color for aa in self._pixels[start_index: end_index]]
+                
     def get_all_groups(self):
         return self._groups.keys()
